@@ -3,15 +3,15 @@ import React from 'react';
 import Textbox from '../../components/Textbox/Textbox';
 import Aux from '../../hoc/Aux/Aux';
 
-const Resume = props => {
+const About = props => {
 
   return (
     <Aux>
       <Textbox>
-        This is the Resume page.
+        This is the About page.
       </Textbox>
     </Aux>
   )
 }
 
-export default Resume;
+export default About;

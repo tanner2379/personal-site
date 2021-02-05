@@ -1,11 +1,15 @@
 import React from 'react';
+
+import Textbox from '../../components/Textbox/Textbox';
 import Aux from '../../hoc/Aux/Aux';
 
 const Sites = props => {
 
   return (
     <Aux>
-      Sites
+      <Textbox>
+        This is the Sites page.
+      </Textbox>
     </Aux>
   )
 }

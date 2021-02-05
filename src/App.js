@@ -1,37 +1,35 @@
 import React, { Suspense } from 'react';
-import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
+
+import { useStore } from './hooks-store/store';
 
 import Layout from './hoc/Layouts/Layout';
-import Home from './containers/Home/Home';
+import About from './containers/About/About';
+import Resume from './containers/Resume/Resume';
+import Sites from './containers/Sites/Sites';
 
-
-const Resume = React.lazy(() => {
-  return import('./containers/Resume/Resume');
-});
-
-const Sites = React.lazy(() => {
-  return import('./containers/Sites/Sites');
-});
-
-const App = props => {
-  const routes = (
-    <Switch>
-      <Route path={'/resume'} component={(props) => <Resume {...props} />} />
-      <Route path={'/sites'} component={(props) => <Sites {...props} />} />
-      <Route path={'/'} exact component={Home} />
-      <Redirect to="/" />
-    </Switch>
-  )
-
+const wrapper = (element) => {
   return (
-    <div>
-      <Layout>
-        <Suspense fallback={<p>Loading...</p>} >
-          {routes}
-        </Suspense>
-      </Layout>
-    </div>
+    <Layout>
+      <Suspense fallback={<p>Loading...</p>} >
+        {element}
+      </Suspense>
+    </Layout>
   );
 };
 
-export default withRouter(App);
+const App = props => {
+  const state = useStore()[0];
+
+  switch(state.page) {
+    case 'About':
+      return wrapper(<About />);
+    case 'Resume':
+      return wrapper(<Resume />);
+    case 'Sites':
+      return wrapper(<Sites />);
+    default:
+      return wrapper(<About />);
+  }
+};
+
+export default App;

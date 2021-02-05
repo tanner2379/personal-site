@@ -6,7 +6,7 @@ const DrawerToggle = props => {
   return (
     <div
       className={classes.DrawerToggle}
-      onclick={props.clicked} >
+      onClick={props.clicked} >
         <div></div>
         <div></div>
         <div></div>

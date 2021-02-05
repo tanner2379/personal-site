@@ -7,16 +7,16 @@ import classes from './NavigationItems.module.css';
 const NavigationItems = props => {
   return (
     <ul className={classes.NavigationItems} >
-    <NavigationItem link={'/'} exact >
-      Home
-    </NavigationItem>
-    <NavigationItem link={'/resume'} >
-      Resume
-    </NavigationItem>
-    <NavigationItem link={'/sites'} >
-      Sites I've Built
-    </NavigationItem>
-  </ul>
+      <NavigationItem link={'About'} >
+        About
+      </NavigationItem>
+      <NavigationItem link={'Resume'} >
+        Resume
+      </NavigationItem>
+      <NavigationItem link={'Sites'} >
+        Sites I've Built
+      </NavigationItem>
+    </ul>
   );
 };
 

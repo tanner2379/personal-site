@@ -1,19 +1,27 @@
 import React from 'react';
 
-import { NavLink } from 'react-router-dom';
+import { useStore } from '../../../../hooks-store/store';
 
 import classes from './NavigationItem.module.css';
 
 const NavigationItem = props => {
+  const [curPage, dispatch] = useStore(false);
+
+  const routePage = () => {
+    dispatch('SET_PAGE', props.link);
+  }
+
+  let updatedClasses = [classes.NavigationItem];
+
+  if(curPage.page === props.link){
+    updatedClasses.push(classes.active);
+  }
+
+
   return (
-    <li className={classes.NavigationItem}>
-    <NavLink
-      exact={props.exact}
-      to={props.link}
-      activeClassName={classes.active} >
-        {props.children}
-    </NavLink>
-  </li>
+    <li className={updatedClasses.join(' ')} onClick={routePage}>
+      {props.children}
+    </li>
   );
 };
 
