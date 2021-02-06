@@ -7,4 +7,23 @@
   width: 60%;
   margin-left: 20px;
   border-radius: 5px;
+  animation-name: slide-in;
+  animation-duration: 1s;
+}
+
+.TextboxIn {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 }
