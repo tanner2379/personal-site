@@ -4,6 +4,8 @@ import Aux from '../../hoc/Aux/Aux';
 
 import classes from './About.module.css';
 import boxBuilding from '../../assets/box-building-min.png';
+import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
+import Footer from '../../components/Footer/Footer';
 
 const About = props => {
 
@@ -20,9 +22,12 @@ const About = props => {
       <div className={classes.Textbox}>
         <p className={classes.FancyTitle}>Craftsmanship takes many forms</p>
         <p className={classes.openingParagraph}>
-          Whether it is hand sawn joinery or hand crafted websites, our passion drives us to create.
+          Whether it is hand sawn joinery or hand crafted websites, our passion drives us to create.<br/>
           Allow me to bring your website/web application dreams into reality.
         </p>
+        <div className={classes.HireButton}>
+          <a href=''>Contact Now</a>
+        </div>
       </div>
       <img src={boxBuilding} alt='boxBuilding' className={classes.AboutImage} />
     </Aux>
