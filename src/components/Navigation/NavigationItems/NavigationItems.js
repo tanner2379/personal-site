@@ -14,7 +14,7 @@ const NavigationItems = props => {
         Resume
       </NavigationItem>
       <NavigationItem link={'Sites'} >
-        Sites I've Built
+        Sites
       </NavigationItem>
     </ul>
   );

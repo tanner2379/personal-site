@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Aux from '../Aux/Aux';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
+import Footer from '../../components/Footer/Footer';
 
 import classes from './Layout.module.css';
 
@@ -25,6 +26,8 @@ const Layout = props => {
       <main className={classes.Content} >
         {props.children}
       </main>
+
+      <Footer />
     </Aux>
   );
 };
