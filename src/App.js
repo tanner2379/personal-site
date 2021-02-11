@@ -4,17 +4,17 @@ import { useStore } from './hooks-store/store';
 
 import Layout from './hoc/Layouts/Layout';
 import About from './containers/About/About';
-import Resume from './containers/Resume/Resume';
-import Sites from './containers/Sites/Sites';
+import Skills from './containers/Skills/Skills';
+import Contact from './containers/Contact/Contact';
 
 const renderComponent = pageName => {
   switch(pageName) {
     case 'About':
       return (<About />);
-    case 'Resume':
-      return (<Resume />);
-    case 'Sites':
-      return (<Sites />);
+    case 'Skills':
+      return (<Skills />);
+    case 'Contact':
+      return (<Contact />);
     default:
       return (<About />);
   }

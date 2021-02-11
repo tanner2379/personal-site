@@ -8,10 +8,10 @@ const configureStore = () => {
   };
 
   let page = 'About';
-  if(window.location.pathname === '/resume') {
-    page = 'Resume';
-  } else if(window.location.pathname === '/sites') {
-    page = 'Sites';
+  if(window.location.pathname === '/skills') {
+    page = 'Skills';
+  } else if(window.location.pathname === '/contact') {
+    page = 'Contact';
   }
 
   initStore(actions, {

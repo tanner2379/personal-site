@@ -10,11 +10,11 @@ const NavigationItems = props => {
       <NavigationItem link={'About'} >
         About
       </NavigationItem>
-      <NavigationItem link={'Resume'} >
-        Resume
+      <NavigationItem link={'Skills'} >
+        Skills
       </NavigationItem>
-      <NavigationItem link={'Sites'} >
-        Sites
+      <NavigationItem link={'Contact'} >
+        Contact
       </NavigationItem>
     </ul>
   );

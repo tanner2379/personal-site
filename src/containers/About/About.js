@@ -1,11 +1,10 @@
 import React from 'react';
 
 import Aux from '../../hoc/Aux/Aux';
+import ContactButton from '../../components/ContactButton/ContactButton';
 
 import classes from './About.module.css';
 import boxBuilding from '../../assets/box-building-min.png';
-import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
-import Footer from '../../components/Footer/Footer';
 
 const About = props => {
 
@@ -20,13 +19,13 @@ const About = props => {
         If you are interested in how I did this, the source code for this site is available <a href='https://github.com/tanner2379/personal-site'>here</a>.
       </Textbox> */}
       <div className={classes.Textbox}>
-        <p className={classes.FancyTitle}>Craftsmanship takes many forms</p>
+        <p className={classes.Title}>Craftsmanship takes many forms</p>
         <p className={classes.openingParagraph}>
           Whether it is hand sawn joinery or hand crafted websites, our passion drives us to create.<br/>
           Allow me to bring your website/web application dreams into reality.
         </p>
-        <div className={classes.HireButton}>
-          <a href=''>Contact Now</a>
+        <div className={classes.contactButtonWrapper}>
+          <ContactButton />
         </div>
       </div>
       <img src={boxBuilding} alt='boxBuilding' className={classes.AboutImage} />

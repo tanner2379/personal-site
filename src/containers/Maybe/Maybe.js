@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Textbox from '../../components/Textbox/Textbox';
 import Aux from '../../hoc/Aux/Aux';
 
-import classes from './Sites.module.css';
+import classes from './Maybe.module.css';
 import collaberScreenshot from '../../assets/collaberScreenshot.png';
 import burgerBuilderScreenshot from '../../assets/burgerBuilderScreenshot.png';
 import tannerchatScreenshot from '../../assets/tannerchatScreenshot.png';
@@ -22,7 +22,7 @@ const imageSwitch = siteName => {
   }
 }
 
-const Sites = props => {
+const Maybe = props => {
   const [currentImage, setCurrentImage] = useState(<img src={collaberScreenshot} alt='collaberScreenshot' className={classes.Image} />);
 
   const toggleImage = (siteName) => {
@@ -30,8 +30,8 @@ const Sites = props => {
   }
 
   return (
-    <Aux className={classes.Sites}>
-      <h1 className={classes.Title}>A Couple Sites I Have Made</h1>
+    <Aux className={classes.Contact}>
+      <h1 className={classes.Title}>Contact Me</h1>
       <div className={classes.textboxes} >
         <Textbox onClick={() => toggleImage('collaber')}>
           <div className={classes.textboxWrapper} onClick={() => toggleImage('collaber')} >
@@ -75,5 +75,5 @@ const Sites = props => {
   )
 }
 
-export default Sites;
+export default Maybe;
 
