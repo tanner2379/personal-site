@@ -31,7 +31,7 @@ const Skills = props => {
       <div>
         <ul className={classes.bulletList}>
           <li className={classes.bulletPoint}>
-            Minimal library usage gets users to your content faster
+            React Hooks and library usage gets users to your content faster
           </li>
           <li className={classes.bulletPoint}>
             Effortlessly navigable UI experience. Users will never struggle to find what they need
@@ -63,7 +63,7 @@ const Skills = props => {
             Payment sub-account implementation, fees for moving money between user accounts
           </li>
           <li className={classes.bulletPoint}>
-            Load balancing and autoscaling through AWS
+            Robust testing suite for worry free deployments
           </li>
         </ul>
         <p>
