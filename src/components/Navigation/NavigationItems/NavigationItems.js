@@ -7,13 +7,13 @@ import classes from './NavigationItems.module.css';
 const NavigationItems = props => {
   return (
     <ul className={classes.NavigationItems} >
-      <NavigationItem link={'About'} >
+      <NavigationItem link={'/'} exact>
         About
       </NavigationItem>
-      <NavigationItem link={'Skills'} >
+      <NavigationItem link={'/skills'} >
         Skills
       </NavigationItem>
-      <NavigationItem link={'Contact'} >
+      <NavigationItem link={'/contact'} >
         Contact
       </NavigationItem>
     </ul>

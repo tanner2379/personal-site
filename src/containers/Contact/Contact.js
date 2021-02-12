@@ -3,6 +3,7 @@ import emailjs, { init } from 'emailjs-com';
 
 import Aux from '../../hoc/Aux/Aux';
 import { updateObject, checkValidity } from '../../shared/utility';
+import Modal from '../../components/UI/Modal/Modal';
 
 import classes from './Contact.module.css';
 
@@ -56,8 +57,10 @@ const Contact = props => {
   })
 
   const [formIsValid, setFormIsValid] = useState(false);
+  const [submitVisible, setSubmitVisible] = useState(true);
 
   const formSendHandler = () => {
+    setSubmitVisible(false);
 
     if (formIsValid) {
       emailjs.sendForm(serviceID, templateID, '#contactForm');
@@ -93,20 +96,31 @@ const Contact = props => {
     });
   }
 
+  const closeModalHandler = () => {
+    setSubmitVisible(true);
+  }
+
 
   return (
-    <Aux className={classes.Contact}>
-      <h1 className={classes.Title}>Contact Me</h1>
-      <div className={classes.formWrapper}>
+    <Aux>
+      <div className={classes.Wrapper}>
+        <Modal show={!submitVisible} modalClosed={closeModalHandler} >
+          <p>Thank you for contacting me! I will respond to you shortly.</p>
+          <div onClick={closeModalHandler} className={classes.modalCloseButton}>Close</div>
+        </Modal>
+        <h1 className={classes.Title}>Contact Me</h1>
         <form id="contactForm" className={classes.Form}>
           <input type="text" placeholder="Name" className={classes.nameInput} name="name" onChange={(event) => inputChangedHandler(event, 'name')} />
           <input type="email" placeholder="Email Address" className={classes.emailInput} name="email" onChange={(event) => inputChangedHandler(event, 'email')} />
           <input type="text" placeholder="Company" className={classes.companyInput} name="company" onChange={(event) => inputChangedHandler(event, 'company')} />
           <input type="text" placeholder="Subject" className={classes.subjectInput} name="subject" onChange={(event) => inputChangedHandler(event, 'subject')} />
           <textarea placeholder="Your Message" className={classes.textArea} name="message" onChange={(event) => inputChangedHandler(event, 'message')} />
-          <div className={classes.submitButton} onClick={(event) => formSendHandler(event)} >
-            Submit
-          </div>
+          {submitVisible
+            ? <div id="emailButton" className={classes.submitButton} onClick={(event) => formSendHandler(event)} >
+                Submit
+              </div>
+            : null
+          }
         </form>
       </div>
     </Aux>

@@ -1,33 +1,30 @@
-import React from 'react';
-
-import { useStore } from './hooks-store/store';
+import React, { Suspense } from 'react';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
 import Layout from './hoc/Layouts/Layout';
-import About from './containers/About/About';
+import About from './containers/About/About'
 import Skills from './containers/Skills/Skills';
 import Contact from './containers/Contact/Contact';
-
-const renderComponent = pageName => {
-  switch(pageName) {
-    case 'About':
-      return (<About />);
-    case 'Skills':
-      return (<Skills />);
-    case 'Contact':
-      return (<Contact />);
-    default:
-      return (<About />);
-  }
-}
+import TransitionElement from './components/TransitionElement/TransitionElement'
 
 const App = props => {
-  const state = useStore()[0];
 
   return (
     <Layout>
-      {renderComponent(state.page)}
+      <Suspense fallback={<p>Loading...</p>}>
+        <Route render={({location})  => (
+          <TransitionElement multiple assignedKey={location.key} animation='fade' timeout={1000}>
+            <Switch location={location}>
+              <Route path="/" exact component={About} />
+              <Route path="/skills" component={Skills} />
+              <Route path="/contact" component={Contact} />
+              <Redirect to="/" />
+            </Switch>
+          </TransitionElement>
+        )} />
+      </Suspense>
     </Layout>
   )
 };
 
-export default App;
+export default withRouter(App);

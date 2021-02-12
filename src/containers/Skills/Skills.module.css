@@ -2,17 +2,11 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 36px;
   font-weight: 600;
-  animation-name: fadeIn;
-  animation-timing-function: ease-in;
-  animation-duration: 1s;
 }
 
 .openingParagraph {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 24px;
-  animation-name: fadeIn;
-  animation-timing-function: ease-in;
-  animation-duration: 1s;
 }
 
 .bulletList {
@@ -40,9 +34,6 @@
   position: absolute;
   left: 42%;
   bottom: 15%;
-  animation-name: fadeIn;
-  animation-timing-function: ease-in;
-  animation-duration: 1s;
 }
 
 .SkillsImage {
@@ -69,9 +60,6 @@
   align-items: center;
   padding-top: 15px;
   border-radius: 2px;
-  animation-name: fadeIn;
-  animation-timing-function: ease-in;
-  animation-duration: 1s;
 }
 
 .Button.active {
@@ -84,7 +72,8 @@
   position: absolute;
   background-image: linear-gradient(120deg, #504f4d 0%, #2e2e2d 100%);
   width: 45%;
-  height: 80.25%;
+  height: 100%;
+  box-sizing: border-box;
   padding-top: 10%;
   text-align: center;
   align-items: center;
@@ -101,6 +90,15 @@
   }
 }
 
+@keyframes slideIn {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @media(max-width: 499px) {
   .Title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -109,9 +107,6 @@
     margin-top: 50px;
     margin-left: 10px;
     margin-right: 10px;
-    animation-name: fadeIn;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
   }
   
   .openingParagraph {
@@ -119,9 +114,6 @@
     font-size: 22px;
     margin-left: 10px;
     margin-right: 10px;
-    animation-name: fadeIn;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
   }
   
   .bulletList {
@@ -150,9 +142,6 @@
     position: absolute;
     left: 34%;
     bottom: 15%;
-    animation-name: fadeIn;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
   }
   
   .SkillsImage {
@@ -175,9 +164,6 @@
     align-items: center;
     padding-top: 15px;
     border-radius: 2px;
-    animation-name: fadeIn;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
   }
   
   .Button.active {
@@ -190,7 +176,7 @@
     position: absolute;
     background-image: linear-gradient(120deg, #504f4d 0%, #2e2e2d 100%);
     width: 100%;
-    height: 95%;
+    height: 100%;
     text-align: center;
     align-items: center;
     color: #b9b8b5;

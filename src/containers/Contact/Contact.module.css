@@ -1,9 +1,7 @@
-.Contact {
-  text-align: center;
-  justify-content: center;
-  animation-name: fadeIn;
-  animation-timing-function: ease-in;
-  animation-duration: 1s;
+.Wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
 }
 
 .Title {
@@ -13,22 +11,11 @@
   font-weight: 600;
   text-align: center;
   margin-top: 100px;
-  animation-name: fadeIn;
-  animation-timing-function: ease-in;
-  animation-duration: 0.5s;
-}
-
-.formWrapper {
-  display: block;
-  text-align: center;
-  animation-name: fadeIn;
-  animation-timing-function: ease-in;
-  animation-duration: 1s;
 }
 
 .Form {
   display: grid;
-  margin-top: 50px;
+  margin-top: 80px;
   grid-column-gap: 10px;
   grid-row-gap: 25px;
   justify-content: center;
@@ -106,6 +93,20 @@
   font-weight: 550;
 }
 
+.modalCloseButton {
+  background-color: #b9b8b5;
+  width: 75px;
+  height: 20px;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px 0px;
+  border-radius: 2px;
+  color: #2e2e2d;
+  font-size: 16px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 550;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -120,26 +121,17 @@
   .Contact {
     text-align: center;
     justify-content: center;
-    animation-name: fadeIn;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
   }
   
   .Title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 28px;
     font-weight: 600;
-    animation-name: fadeIn;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
   }
   
   .formWrapper {
     display: block;
     text-align: center;
-    animation-name: fadeIn;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
   }
   
   .Form {

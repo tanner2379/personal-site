@@ -5,8 +5,6 @@ import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import Footer from '../../components/Footer/Footer';
 
-import classes from './Layout.module.css';
-
 const Layout = props => {
   const [sideDrawerVisible, setSideDrawerVisible] = useState(false);
 
@@ -22,7 +20,7 @@ const Layout = props => {
     <Aux>
       <Toolbar drawerToggleClicked={sideDrawerToggleHandler} />
       <SideDrawer open={sideDrawerVisible} closed={sideDrawerClosedHandler} />
-      <div className={classes.content}>
+      <div>
         {props.children}
       </div>
       <Footer />
