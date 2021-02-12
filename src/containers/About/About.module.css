@@ -55,7 +55,7 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 28px;
     font-weight: 600;
-    margin-top: 250px;
+    margin-top: 75px;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -81,7 +81,7 @@
   
   .contactButtonWrapper {
     position: absolute;
-    left: 34%;
-    top: 55%;
+    left: 90px;
+    top: 350px;
   }
 }

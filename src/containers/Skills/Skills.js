@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { Link } from 'react-scroll';
 
 import Aux from '../../hoc/Aux/Aux';
 import ContactButton from '../../components/ContactButton/ContactButton';
@@ -8,6 +9,8 @@ import polishedGuitar from '../../assets/polished-guitar-min.jpg';
 
 
 const Skills = props => {
+  const ref = useRef(null);
+
   const [scale, setScale] = useState(null);
 
   const toggleScale = inputScale => {
@@ -75,15 +78,25 @@ const Skills = props => {
 
   return (
     <Aux>
-      <div className={classes.Textbox}>
+      <div className={classes.Textbox} ref={ref}>
         <p className={classes.Title}>Full Stack Rails and React developer</p>
         <p className={classes.openingParagraph}>Always the right tools for the scale of your project.</p>
-        <div onClick={() => toggleScale('large')} className={largeButtonClasses.join(' ')}>
-          Large
-        </div>
-        <div onClick={() => toggleScale('small')} className={smallButtonClasses.join(' ')}>
-          Small
-        </div>
+        {ref.current && ref.current.offsetWidth < 350
+        ? <Link to="large" spy={true} smooth={true} id="large" onClick={() => toggleScale('large')} className={largeButtonClasses.join(' ')}>
+            Large
+          </Link>
+        : <div onClick={() => toggleScale('large')} className={largeButtonClasses.join(' ')}>
+            Large
+          </div>
+        }
+        {ref.current && ref.current.offsetWidth < 350
+        ? <Link to="small" spy={true} smooth={true} id="small" onClick={() => toggleScale('small')} className={smallButtonClasses.join(' ')}>
+            Small
+          </Link>
+        : <div onClick={() => toggleScale('small')} className={smallButtonClasses.join(' ')}>
+            Small
+          </div>
+        }
         {skillList}
         <div className={classes.contactButtonWrapper}>
           <ContactButton />

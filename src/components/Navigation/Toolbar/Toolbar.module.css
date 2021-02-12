@@ -16,4 +16,8 @@
   .DesktopOnly {
     display: none;
   }
+
+  .Toolbar {
+    top: 5px;
+  }
 }

@@ -127,6 +127,7 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 28px;
     font-weight: 600;
+    margin-top: 70px;
   }
   
   .formWrapper {
@@ -136,9 +137,9 @@
   
   .Form {
     display: grid;
-    margin-top: 50px;
+    margin-top: 30px;
     grid-column-gap: 10px;
-    grid-row-gap: 25px;
+    grid-row-gap: 15px;
     justify-content: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
@@ -180,8 +181,8 @@
     grid-row-end: 5;
     grid-column-start: 1;
     grid-column-end: 4;
-    width: 400px;
-    height: 200px;
+    width: 80vw;
+    height: 20vw;
     border-radius: 5px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     resize: none;
@@ -190,19 +191,21 @@
   .submitButton {
     grid-row-start: 6;
     grid-row-end: 6;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
     background-color: #b9b8b5;
     cursor: pointer;
     text-align: center;
     align-items: center;
-    padding-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 5px;
     border-radius: 2px;
     color: #2e2e2d;
-    font-size: 24px;
+    font-size: 20px;
+    width: 100px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 550;
-    height: 50px;
+    height: 30px;
   }
   
   .ContactButton {

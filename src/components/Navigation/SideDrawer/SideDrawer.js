@@ -21,6 +21,21 @@ const sideDrawer = props => {
         <nav>
           <NavigationItems />
         </nav>
+        <ul className={classes.externalLinks}>
+          <li className={classes.NavigationItem}>
+            <a href='https://github.com/tanner2379' >
+                Github
+            </a>
+          </li>
+          <li className={classes.NavigationItem}>
+            <a href='https://www.linkedin.com/in/tanner-sigel/' >
+                LinkedIn
+            </a>
+          </li>
+          <li className={classes.NavigationItem}>
+            <p>tanner2379@live.com</p>
+          </li>
+        </ul>
       </div>
     </Aux>
   );
