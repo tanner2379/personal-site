@@ -70,7 +70,7 @@ const Skills = props => {
           </li>
         </ul>
         <p>
-          Example: <a href='http://www.collaber.net/dev_posts/version_0point00' className={classes.link}>Collaber.net</a>
+          Example: <a href='https://www.collaber.net/dev_posts/version_0point00' className={classes.link}>Collaber.net</a>
         </p>
       </div>
     )
