@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
 import Layout from './hoc/Layouts/Layout';
-import About from './containers/About/About'
+import About from './containers/About/About';
 import Skills from './containers/Skills/Skills';
 import Contact from './containers/Contact/Contact';
 import TransitionElement from './components/TransitionElement/TransitionElement'

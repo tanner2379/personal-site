@@ -4,7 +4,7 @@ import Aux from '../../hoc/Aux/Aux';
 import ContactButton from '../../components/ContactButton/ContactButton';
 
 import classes from './About.module.css';
-import boxBuilding from '../../assets/box-building-min.png';
+import boxBuilding from '../../assets/box-building-scaled.png';
 
 const About = props => {
 
