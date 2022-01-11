@@ -2,6 +2,9 @@
   position: absolute;
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Title {
@@ -10,61 +13,73 @@
   font-size: 36px;
   font-weight: 600;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 10rem;
 }
 
 .Form {
-  display: grid;
-  margin-top: 80px;
-  grid-column-gap: 10px;
-  grid-row-gap: 25px;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-top: 3rem;
   justify-content: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.row1 {
+  margin-bottom: 1.5rem;
+  display: flex;
+  width: 100%;
+}
+
 .nameInput {
-  grid-row-start: 1;
-  grid-row-end: 1;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0.5rem;
+  background-color: #B9B8B5;
+  margin-right: 1.5rem;
+  width: 100%;
+  border-radius: 2px;
 }
 
 .emailInput {
-  grid-row-start: 1;
-  grid-row-end: 1;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0.5rem;
+  background-color: #B9B8B5;
+  margin-right: 1.5rem;
+  width: 100%;
+  border-radius: 2px;
 }
 
 .companyInput {
-  grid-row-start: 1;
-  grid-row-end: 1;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0.5rem;
+  background-color: #B9B8B5;
+  width: 100%;
+  border-radius: 2px;
 }
 
 .subjectInput {
-  grid-row-start: 2;
-  grid-row-end: 2;
-  grid-column-start: 1;
-  grid-column-end: 3;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0.5rem;
+  background-color: #B9B8B5;
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .textArea {
-  grid-row-start: 3;
-  grid-row-end: 3;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  width: 800px;
-  height: 400px;
-  border-radius: 5px;
+  width: 100%;
+  height: 20rem;
+  border-radius: 2px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   resize: none;
+  padding: 0.5rem;
+  background-color: #B9B8B5;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
 }
 
 .submitButton {
-  grid-row-start: 4;
-  grid-row-end: 4;
-  grid-column-start: 2;
-  grid-column-end: 3;
   background-color: #b9b8b5;
   cursor: pointer;
   text-align: center;
@@ -76,21 +91,15 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 550;
   height: 50px;
+  align-self: center;
+  justify-self: center;
+  width: 8rem;
+  margin-top: 2rem;
 }
 
-.ContactButton {
-  background-color: #b9b8b5;
-  width: 150px;
-  height: 50px;
-  cursor: pointer;
-  text-align: center;
-  align-items: center;
-  padding-top: 15px;
-  border-radius: 2px;
-  color: #2e2e2d;
-  font-size: 24px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: 550;
+.submitButton:hover {
+  background-color: #919191;
+  color: #d4d4d4;
 }
 
 .modalCloseButton {
@@ -136,63 +145,51 @@
   }
   
   .Form {
-    display: grid;
-    margin-top: 30px;
-    grid-column-gap: 10px;
-    grid-row-gap: 15px;
+    margin-top: unset;
     justify-content: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 60%;
+  }
+
+  .row1 {
+    flex-direction: column;
   }
   
   .nameInput {
-    grid-row-start: 1;
-    grid-row-end: 1;
-    grid-column-start: 1;
-    grid-column-end: 4;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-right: unset;
+    margin-top: 1.5rem;
+    box-sizing: border-box;
   }
 
   .emailInput {
-    grid-row-start: 2;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 4;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-right: unset;
+    margin-top: 1.5rem;
+    box-sizing: border-box;
   }
 
   .companyInput {
-    grid-row-start: 3;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 4;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-right: unset;
+    margin-top: 1.5rem;
+    box-sizing: border-box;
   }
   
   .subjectInput {
-    grid-row-start: 4;
-    grid-row-end: 4;
-    grid-column-start: 1;
-    grid-column-end: 4;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   
   .textArea {
-    grid-row-start: 5;
-    grid-row-end: 5;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    width: 80vw;
-    height: 20vw;
+    width: 100%;
+    height: 15rem;
     border-radius: 5px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     resize: none;
+    overflow-y: scroll;
   }
   
   .submitButton {
-    grid-row-start: 6;
-    grid-row-end: 6;
-    grid-column-start: 2;
-    grid-column-end: 3;
     background-color: #b9b8b5;
     cursor: pointer;
     text-align: center;

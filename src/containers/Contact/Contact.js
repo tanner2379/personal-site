@@ -1,82 +1,82 @@
-import React, { useState } from 'react';
-import emailjs, { init } from 'emailjs-com';
+import React, { useState } from "react";
+import emailjs, { init } from "emailjs-com";
 
-import Aux from '../../hoc/Aux/Aux';
-import { updateObject, checkValidity } from '../../shared/utility';
-import Modal from '../../components/UI/Modal/Modal';
+import Aux from "../../hoc/Aux/Aux";
+import { updateObject, checkValidity } from "../../shared/utility";
+import Modal from "../../components/UI/Modal/Modal";
 
-import classes from './Contact.module.css';
+import classes from "./Contact.module.css";
 
-const Contact = props => {
+const Contact = (props) => {
   init("user_lUyWLWlDU7IvSlalnyu22");
-  const serviceID = 'service_j0vizk3'
-  const templateID = 'template_r0r4aqj'
+  const serviceID = "service_j0vizk3";
+  const templateID = "template_r0r4aqj";
 
   const [formValue, setFormValue] = useState({
     name: {
-      value: '',
+      value: "",
       validation: {
-        required: true
+        required: true,
       },
       valid: false,
       touched: false,
     },
     email: {
-      value: '',
+      value: "",
       validation: {
-        required: true
+        required: true,
       },
       valid: false,
       touched: false,
     },
     company: {
-      value: '',
+      value: "",
       validation: {
-        required: false
+        required: false,
       },
       valid: false,
       touched: false,
     },
     subject: {
-      value: '',
+      value: "",
       validation: {
-        required: true
+        required: true,
       },
       valid: false,
       touched: false,
-      classes: [classes.subjectInput]
+      classes: [classes.subjectInput],
     },
     message: {
-      value: '',
+      value: "",
       validation: {
-        required: true
+        required: true,
       },
       valid: false,
       touched: false,
     },
-  })
+  });
 
   const [formIsValid, setFormIsValid] = useState(false);
-  const [submitVisible, setSubmitVisible] = useState(true);
+  const [modalVisible, setModalVisible] = useState(false);
 
   const formSendHandler = () => {
-    setSubmitVisible(false);
-
-    if (formIsValid) {
-      emailjs.sendForm(serviceID, templateID, '#contactForm');
-    }
-  }
+    emailjs.sendForm(serviceID, templateID, "#contactForm");
+    setModalVisible(true);
+  };
 
   const inputChangedHandler = (event, inputIdentifier) => {
     const updatedFormElement = updateObject(formValue[inputIdentifier], {
       value: event.target.value,
-      valid: checkValidity(event.target.value, formValue[inputIdentifier].validation),
+      valid: checkValidity(
+        event.target.value,
+        formValue[inputIdentifier].validation
+      ),
       touched: true,
     });
 
     const updatedFormValue = updateObject(formValue, {
-      [inputIdentifier]: updatedFormElement
-    })
+      [inputIdentifier]: updatedFormElement,
+    });
 
     let formValid = true;
     for (let inputIdentifier in updatedFormValue) {
@@ -92,40 +92,74 @@ const Contact = props => {
   for (let key in formValue) {
     formElementsArray.push({
       id: key,
-      config: formValue[key]
+      config: formValue[key],
     });
   }
 
   const closeModalHandler = () => {
-    setSubmitVisible(true);
-  }
-
+    setModalVisible(false);
+  };
 
   return (
     <Aux>
       <div className={classes.Wrapper}>
-        <Modal show={!submitVisible} modalClosed={closeModalHandler} >
+        <Modal show={modalVisible} modalClosed={closeModalHandler}>
           <p>Thank you for contacting me! I will respond to you shortly.</p>
-          <div onClick={closeModalHandler} className={classes.modalCloseButton}>Close</div>
+          <div onClick={closeModalHandler} className={classes.modalCloseButton}>
+            Close
+          </div>
         </Modal>
         <h1 className={classes.Title}>Contact Me</h1>
         <form id="contactForm" className={classes.Form}>
-          <input type="text" placeholder="Name" className={classes.nameInput} name="name" onChange={(event) => inputChangedHandler(event, 'name')} />
-          <input type="email" placeholder="Email Address" className={classes.emailInput} name="email" onChange={(event) => inputChangedHandler(event, 'email')} />
-          <input type="text" placeholder="Company" className={classes.companyInput} name="company" onChange={(event) => inputChangedHandler(event, 'company')} />
-          <input type="text" placeholder="Subject" className={classes.subjectInput} name="subject" onChange={(event) => inputChangedHandler(event, 'subject')} />
-          <textarea placeholder="Your Message" className={classes.textArea} name="message" onChange={(event) => inputChangedHandler(event, 'message')} />
-          {submitVisible
-            ? <div id="emailButton" className={classes.submitButton} onClick={(event) => formSendHandler(event)} >
-                Submit
-              </div>
-            : null
-          }
+          <div className={classes.row1}>
+            <input
+              type="text"
+              placeholder="Name"
+              className={classes.nameInput}
+              name="name"
+              onChange={(event) => inputChangedHandler(event, "name")}
+            />
+            <input
+              type="email"
+              placeholder="Email Address"
+              className={classes.emailInput}
+              name="email"
+              onChange={(event) => inputChangedHandler(event, "email")}
+            />
+            <input
+              type="text"
+              placeholder="Company"
+              className={classes.companyInput}
+              name="company"
+              onChange={(event) => inputChangedHandler(event, "company")}
+            />
+          </div>
+          <input
+            type="text"
+            placeholder="Subject"
+            className={classes.subjectInput}
+            name="subject"
+            onChange={(event) => inputChangedHandler(event, "subject")}
+          />
+          <textarea
+            placeholder="Your Message"
+            className={classes.textArea}
+            name="message"
+            onChange={(event) => inputChangedHandler(event, "message")}
+          />
+          {formIsValid ? (
+            <div
+              id="emailButton"
+              className={classes.submitButton}
+              onClick={(event) => formSendHandler(event)}
+            >
+              Submit
+            </div>
+          ) : null}
         </form>
       </div>
     </Aux>
-  )
-}
+  );
+};
 
 export default Contact;
-
