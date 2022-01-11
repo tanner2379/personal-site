@@ -10,7 +10,8 @@ const NavigationItems = (props) => {
       <NavigationItem link={"/"} exact>
         About
       </NavigationItem>
-      <NavigationItem link={"/skills"}>Skills</NavigationItem>
+      {/* <NavigationItem link={"/skills"}>Skills</NavigationItem> */}
+      <NavigationItem link={"/projects"}>Projects</NavigationItem>
       <NavigationItem link={"/contact"}>Contact</NavigationItem>
       <a
         className={classes.navItemClone}
